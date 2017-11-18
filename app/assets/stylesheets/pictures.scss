@@ -1,0 +1,92 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #fafafa;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  background-color: #fff;
+  height: 77px;
+  border-bottom: 1px;
+
+  border-color: #f0f0f0;
+  border-bottom-style: solid;
+
+}
+
+.navbar-default {
+  border: 0;
+}
+
+.navbar {
+  background-color: #fff;
+  color: black;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-bottom: 0px;
+}
+
+.navbar-default {
+  .navbar-brand {
+    color: black;
+    &:hover {
+      color: white;
+    }
+  }
+  .navbar-nav > li > a {
+    color: black;
+    &:hover, &:focus {
+      color: black;
+    }
+  }
+  .navbar-nav > .open > a {
+    background-color: transparent;
+    color: black;
+    &:hover, &:focus {
+      background-color: transparent;
+      color: black;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ccc;
+    text-align: center;
+    &:hover, &:focus {
+      color: black;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.flex-container {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-justify-content: space-around; /* Safari */
+  justify-content:         space-around;
+  -webkit-align-items: center; /* Safari */
+  align-items:         center;
+  text-align: center;
+  height: 50px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.flex-container li {
+  display: block;
+  border-bottom: 1px;
+
+  border-color: #000;
+  border-bottom-style: solid;
+}
