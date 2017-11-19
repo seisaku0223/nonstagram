@@ -12,6 +12,8 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(pictures_params)
+    # userのidを取得し、user_idとして保存する
+    @picture.user_id = current_user.id
     if @picture.save
       redirect_to pictures_path, notice: "新規投稿しました！"
     else

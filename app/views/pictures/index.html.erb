@@ -5,9 +5,9 @@
     <%= link_to "画像を投稿する", new_picture_path, class: 'btn btn-default' %>
     <% @pictures.each do |picture| %>
       <div class="row">
-        <%= image_tag(picture.picture_url) if picture.picture.present? %>
-        <p><strong>コメント</strong></p>
-        <p><%= picture.comment %></p>
+        <%= image_tag(picture.picture) if picture.picture.present? %>
+        <p><strong>投稿者：</strong><%= picture.user.name %></p>
+        <p><strong>コメント：</strong><%= picture.comment %></p>
         <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
         <%= link_to "削除", picture_path(picture.id), method: :delete, data: {confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
       </div>

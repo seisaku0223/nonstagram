@@ -3,4 +3,6 @@ class Picture < ActiveRecord::Base
 
   validates :picture, presence: true
   validates :comment, presence: true
+
+  belongs_to :user
 end
