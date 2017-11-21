@@ -14,8 +14,11 @@ class PicturesController < ApplicationController
     @picture = Picture.new(pictures_params)
     # userのidを取得し、user_idとして保存する
     @picture.user_id = current_user.id
+
+    # save時のバリデーション成否を条件にしている
     if @picture.save
       redirect_to pictures_path, notice: "新規投稿しました！"
+      NoticeMailer.sendmail_picture(@picture).deliver
     else
       render 'new'
     end
