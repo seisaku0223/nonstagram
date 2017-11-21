@@ -1,4 +1,17 @@
 Rails.application.configure do
+
+  config.action_mailer.default_url_options = { host: 'https://still-harbor-80500.herokuapp.com/' }
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings =
+  {
+    user_name: "SENDGRID_USERNAME",
+    password: "SENDGRID_PASSWORD",
+    domain: "heroku.com",
+    address: "smtp.sendgrid.net",
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
