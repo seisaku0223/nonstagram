@@ -2,8 +2,12 @@ Rails.application.routes.draw do
 
   root 'top#index'
 
-  devise_for :users
   resources :pictures, only:[:index, :new, :create, :edit, :update, :destroy]
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
