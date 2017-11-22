@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :set_picture, only: [:edit, :update, :destroy]
 
   def index
@@ -37,8 +37,8 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    @picture.destroy
-    redirect_to pictures_path, notice: "投稿内容を削除しました！"
+      @picture.destroy
+      redirect_to pictures_path, notice: "投稿内容を削除しました！"
   end
 
   private
